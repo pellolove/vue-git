@@ -23,9 +23,9 @@
                 msg: '这是我的Hello vue 程序',
                 time: new Date(),
                 dList: {
-                    a: 'aValue',
-                    b: 'bValue',
-                    c: 'cValue'
+                    akey: 'aValue',
+                    bkey: 'bValue',
+                    ckey: 'cValue'
                 }
     
             }
