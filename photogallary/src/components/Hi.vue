@@ -1,8 +1,16 @@
 <template>
-    <div> 
+    <div>
         <p>
             你好 {{ msg }}
-            <h1> {{ time + '时间'}}</h1>
+    
+        </p>
+        <p>
+            对像迭代:
+            <ul>
+                <li v-for="(value,key,index) in dList">
+                    (key){{key}}: (value){{value}}[{{index}}]
+                </li>
+            </ul>
         </p>
     </div>
 </template>
@@ -12,8 +20,13 @@
         name: 'sayhello',
         data() {
             return {
-                msg: 'Welcome to Your Vue.js App',
-                time: new Date()
+                msg: '这是我的Hello vue 程序',
+                time: new Date(),
+                dList: {
+                    a: 'aValue',
+                    b: 'bValue',
+                    c: 'cValue'
+                }
     
             }
         }

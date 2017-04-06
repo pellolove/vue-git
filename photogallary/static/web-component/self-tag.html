@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"> 
+    <title>自定义元素</title>
+    <script>
+        // 获取HTMLElement 的prototype
+        var objectPrototype = Object.create(HTMLElement.prototype);
+        // 添加新属性 title
+        Object.defineProperty(objectPrototype, 'title', { writable: true });
+        // 自定义元素创建时触发
+        objectPrototype.createdCallback = function () {
+            // this.innerText = this.title;
+            this.innerText = this.attributes['title'].value;
+        };
+        //注册自义元素到html 
+        var myNameElement = document.registerElement('my-name', {
+            prototype: objectPrototype
+        });
+    </script>
+</head>
+
+<body>
+    自定义元素
+    <my-name id='wc1' title='自定义html元素 my-name'></my-name>
+</body>
+
+</html>
