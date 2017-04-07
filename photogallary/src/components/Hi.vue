@@ -8,14 +8,15 @@
             对像迭代:
             <ul>
                 <li v-for="(value,key,index) in dList">
-                    (key){{key}}: (value){{value}}[{{index}}]
+                     key_{{key}}: value_{{value}}--index_{{index}}
                 </li>
             </ul>
         </p>
     
         <p>
-            这里是hellocpm组件:
-            <you></you>
+            <you :fmsg="firstName"></you>
+            <you :fmsg="lastName"></you>
+            
         </p>
     
     </div>
@@ -35,7 +36,9 @@
         data() {
             return {
                 msg: '这是我的Hello vue 程序',
-                fmsg: '我是页面里的内容',
+                // fmsg: '我是页面里的内容',
+                firstName: 'first name',
+                lastName: 'last name',
                 time: new Date(),
                 dList: {
                     akey: 'aValue',
@@ -56,5 +59,8 @@
     p {
         font-size: 2em;
         text-algin: center;
+    }
+    li{
+        
     }
 </style>

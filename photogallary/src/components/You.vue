@@ -1,16 +1,16 @@
 <template>
-  <div id='you'>     
-    <h1>sb</h1>
-    {{ msg }}
+  <div id='you'>
+    {{fmsg}} {{ msg }}
   </div>
 </template>
 
 <script>
   export default {
     name: 'you',
+    props: ['fmsg'],
     data() {
       return {
-        msg: '傻了8鸡的！'
+        msg: ' 来自 you 的组件！'
       }
     }
   }
