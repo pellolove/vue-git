@@ -12,15 +12,30 @@
                 </li>
             </ul>
         </p>
+    
+        <p>
+            这里是hellocpm组件:
+            <hello-cpm :fmsg='fmsg'></hello-cpm>
+        </p>
+    
     </div>
 </template>
 
 <script>
+    import Vue from 'vue'
+    Vue.component('hello-cpm', {
+        template: `<div>say hello，我是组件里的内容，
+                    <span>{{fmsg}}</span>
+                </div>`,
+        props: ['fmsg']
+    });
+    
     export default {
         name: 'sayhello',
         data() {
             return {
                 msg: '这是我的Hello vue 程序',
+                fmsg: '我是页面里的内容',
                 time: new Date(),
                 dList: {
                     akey: 'aValue',
