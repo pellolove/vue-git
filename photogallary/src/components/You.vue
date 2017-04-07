@@ -1,15 +1,16 @@
 <template>
-  <div>
-    say hello {{name}}
+  <div id='you'>     
+    <h1>sb</h1>
+    {{ msg }}
   </div>
 </template>
 
 <script>
   export default {
-    name: 'hello',
+    name: 'you',
     data() {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        msg: '傻了8鸡的！'
       }
     }
   }

@@ -15,21 +15,21 @@
     
         <p>
             这里是hellocpm组件:
-            <hello-cpm :fmsg='fmsg'></hello-cpm>
+            <you></you>
         </p>
     
     </div>
 </template>
 
 <script>
-    import Vue from 'vue'
-    Vue.component('hello-cpm', {
-        template: `<div>say hello，我是组件里的内容，
-                    <span>{{fmsg}}</span>
-                </div>`,
-        props: ['fmsg']
-    });
-    
+    // import Vue from 'vue'
+    // Vue.component('hello-cpm', {
+    //     template: `<div>say hello，我是组件里的内容，
+    //                 <span>{{fmsg}}</span>
+    //             </div>`,
+    //     props: ['fmsg']
+    // });
+    import You from './You'
     export default {
         name: 'sayhello',
         data() {
@@ -44,7 +44,11 @@
                 }
     
             }
+        },
+        components: {
+            You
         }
+    
     }
 </script>
 
