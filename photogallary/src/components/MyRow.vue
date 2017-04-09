@@ -1,7 +1,9 @@
 <template>
     <tr v-bind:rownumber='rowNumber'>
         <td> {{fatherInfo}}
-            <button v-on:click="rowNumber += 1">{{rowNumber}}</button>
+            <button v-on:click="increment">{{rowNumber}}</button>
+            <slot name='top'></slot>
+            <slot> from my row-vue</slot>
         </td>
     </tr>
 </template>
@@ -14,6 +16,12 @@
         data() {
             return {
                 rowNumber: 0
+            }
+        },
+        methods: {
+            increment() {
+                this.rowNumber++;
+                this.$emit('increment');
             }
         }
     

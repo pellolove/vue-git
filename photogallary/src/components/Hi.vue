@@ -20,12 +20,16 @@
         </p>
         <p>
             <table>
-                <tr is='my-row' father-info='1'></tr>
-                <tr is='my-row' father-info='2'></tr>
-                <tr is='my-row' father-info='3'></tr>
-                <tr is='my-row' father-info='4'></tr>
-                <tr is='my-row' father-info='5'></tr>
+                <tr is='my-row' v-on:increment="incrementTotal" father-info='1'>
+                from hi
+                <h1 slot="top">把这个顶到from hi上去</h1>
+                </tr>
+                <tr is='my-row' v-on:increment="incrementTotal" father-info='2'></tr>
+                <tr is='my-row' v-on:increment="incrementTotal" father-info='3'></tr>
+                <tr is='my-row' v-on:increment="incrementTotal" father-info='4'></tr>
+                <tr is='my-row' v-on:increment="incrementTotal" father-info='5'></tr>
             </table>
+            Total： {{ total }}
         </p>
     </div>
 </template>
@@ -49,12 +53,18 @@
                 firstName: 'first name',
                 lastName: 'last name',
                 time: new Date(),
+                total: 0,
                 dList: {
                     akey: 'aValue',
                     bkey: 'bValue',
                     ckey: 'cValue'
                 }
+            }
+        },
+        methods: {
+            incrementTotal() {
     
+                this.total += 1
             }
         },
         components: {
