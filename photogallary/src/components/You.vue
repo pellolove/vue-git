@@ -1,6 +1,20 @@
 <template>
   <div id='you'>
     {{fmsg}} {{ msg }}
+    <div>
+      <form action="/">
+        <input type="text" v-model='msg'>
+        <input type="checkbox" id="jack" value="Jack" v-model="cklist">
+        <label for="jack">Jack</label>
+        <input type="checkbox" id="Tom" value="Tom" v-model="cklist">
+        <label for="Tom">Tom</label>
+        <input type="checkbox" id="Lucy" value="Lucy" v-model="cklist">
+        <label for="Lucy">Lucy</label>
+        <input type="checkbox" id="john" value="John" v-model="cklist">
+        <label for="john">John</label>
+        <label>Checked :{{cklist}}</label>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -10,7 +24,8 @@
     props: ['fmsg'],
     data() {
       return {
-        msg: ' 来自 you 的组件！'
+        msg: ' 来自 you 的组件！',
+        cklist: []
       }
     }
   }
