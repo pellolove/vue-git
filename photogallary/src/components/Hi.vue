@@ -8,7 +8,7 @@
             对像迭代:
             <ul>
                 <li v-for="(value,key,index) in dList">
-                     key_{{key}}: value_{{value}}--index_{{index}}
+                    key_{{key}}: value_{{value}}--index_{{index}}
                 </li>
             </ul>
         </p>
@@ -16,9 +16,17 @@
         <p>
             <you :fmsg="firstName"></you>
             <you :fmsg="lastName"></you>
-            
-        </p>
     
+        </p>
+        <p>
+            <table>
+                <tr is='my-row' father-info='1'></tr>
+                <tr is='my-row' father-info='2'></tr>
+                <tr is='my-row' father-info='3'></tr>
+                <tr is='my-row' father-info='4'></tr>
+                <tr is='my-row' father-info='5'></tr>
+            </table>
+        </p>
     </div>
 </template>
 
@@ -31,6 +39,7 @@
     //     props: ['fmsg']
     // });
     import You from './You'
+    import MyRow from './MyRow'
     export default {
         name: 'sayhello',
         data() {
@@ -49,7 +58,8 @@
             }
         },
         components: {
-            You
+            You,
+            MyRow
         }
     
     }
@@ -60,7 +70,6 @@
         font-size: 2em;
         text-algin: center;
     }
-    li{
-        
-    }
+    
+    li {}
 </style>
