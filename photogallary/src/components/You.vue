@@ -4,6 +4,7 @@
     <div>
       <form action="/">
         <input type="text" v-model='msg'>
+        <input type="button" value="click" @click="cons">
         <input type="checkbox" id="jack" value="Jack" v-model="cklist">
         <label for="jack">Jack</label>
         <input type="checkbox" id="Tom" value="Tom" v-model="cklist">
@@ -21,13 +22,24 @@
 <script>
   export default {
     name: 'you',
-    props: ['fmsg'],
+    // props: ['fmsg'],//直接使用传值
+    //直接使用传值 props 指定验证
+    props: {
+      // fmsg: Number //必须是字串型
+      fmsg: String //必须是字串型
+    },
     data() {
       return {
         msg: ' 来自 you 的组件！',
         cklist: []
       }
+    },
+    methods: {
+      cons() {
+        console.log('click me!');
+      }
     }
+  
   }
 </script>
 
