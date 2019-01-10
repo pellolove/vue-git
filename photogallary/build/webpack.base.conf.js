@@ -22,7 +22,8 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src')
+      '@': resolve('src'),
+      'muse-components': 'muse-ui/src' //for muse-ui
     }
   },
   module: {
@@ -37,6 +38,22 @@ module.exports = {
              formeslinatter: require('eslint-friendly-formatter')
            }
          },*/
+      {
+
+        test: /muse-ui.src.*?js$/,
+        loader: 'babel-loader'
+
+      },
+      {
+        test: /\.less$/,
+        use: [{
+          loader: "style-loader" // creates style nodes from JS strings
+        }, {
+          loader: "css-loader" // translates CSS into CommonJS
+        }, {
+          loader: "less-loader" // compiles Less to CSS
+        }]
+      },
       {
         test: /\.vue$/,
         loader: 'vue-loader',
