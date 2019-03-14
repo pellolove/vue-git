@@ -5,32 +5,18 @@
     
         </p>
         <p>
-            对像迭代:
+            对像迭代: hello，我是组件里的内容，1
             <ul>
-                <li v-for="(value,key,index) in dList">
-                    key_{{key}}: value_{{value}}--index_{{index}}
+                <li v-for="(value,key,index) in dList" v-bind:key= key>
+                    <p>key: {{key}}</p>
+                    <p>value: {{value}}</p>
+                    <p>index: {{index}}</p>
                 </li>
             </ul>
         </p>
     
-        <p>
-            <you :fmsg="firstName"></you>
-            <you :fmsg="lastName"></you>
-    
-        </p>
-        <p>
-            <table>
-                <tr is='my-row' v-on:increment="incrementTotal" father-info='1'>
-                from hi
-                <h1 slot="top">把这个顶到from hi上去</h1>
-                </tr>
-                <tr is='my-row' v-on:increment="incrementTotal" father-info='2'></tr>
-                <tr is='my-row' v-on:increment="incrementTotal" father-info='3'></tr>
-                <tr is='my-row' v-on:increment="incrementTotal" father-info='4'></tr>
-                <tr is='my-row' v-on:increment="incrementTotal" father-info='5'></tr>
-            </table>
-            Total： {{ total }}
-        </p>
+      
+       
     </div>
 </template>
 
@@ -45,7 +31,7 @@
     import You from './You'
     import MyRow from './MyRow'
     export default {
-        name: 'sayhello',
+        name: 'hi',
         data() {
             return {
                 msg: '这是我的Hello vue 程序',
@@ -55,9 +41,9 @@
                 time: new Date(),
                 total: 0,
                 dList: {
-                    akey: 'aValue',
-                    bkey: 'bValue',
-                    ckey: 'cValue'
+                    akey: 'A',
+                    bkey: 'B',
+                    ckey: 'C'
                 }
             }
         },
