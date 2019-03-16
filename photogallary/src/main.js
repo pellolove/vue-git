@@ -11,6 +11,9 @@ import App from './App'
 import router from './router'
 import You from '@/components/You'
 
+import Mint from "mint-ui";
+import "mint-ui/lib/style.css";
+Vue.use(Mint);
 
 Vue.use(ElementUI)
 Vue.config.productionTip = false
