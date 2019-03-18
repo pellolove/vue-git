@@ -21,21 +21,16 @@
 </template>
 
 <script>
-    // import Vue from 'vue'
-    // Vue.component('hello-cpm', {
-    //     template: `<div>say hello，我是组件里的内容，
-    //                 <span>{{fmsg}}</span>
-    //             </div>`,
-    //     props: ['fmsg']
-    // });
+ 
     import You from './You'
     import MyRow from './MyRow'
+    import Vue from 'vue'
     export default {
         name: 'hi',
         data() {
             return {
                 msg: '这是我的Hello vue 程序',
-                // fmsg: '我是页面里的内容',
+                //fmsg: '我是页面里的内容',
                 firstName: 'first name',
                 lastName: 'last name',
                 time: new Date(),
@@ -48,10 +43,6 @@
             }
         },
         methods: {
-            incrementTotal() {
-    
-                this.total += 1
-            }
         },
         components: {
             You,
@@ -64,8 +55,8 @@
 <style scoped>
     p {
         font-size: 2em;
-        text-algin: center;
+        text-align: center;
     }
     
-    li {}
+   
 </style>

@@ -6,7 +6,7 @@
 </template>
 
 <script>
-    // import 'muse-components/styles/base.less' // 加载基础的样式
+    //import 'muse-components/styles/base.less' // 加载基础的样式
     
     import Vue from 'vue'
     import appBar from 'muse-components/appBar'
