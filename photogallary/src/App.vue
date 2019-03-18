@@ -1,9 +1,10 @@
 <template>
   <div id="app">
-    <el-menu> 
-      <el-menu-item index=""><router-link tag="a" to="/">PC端</router-link></el-menu-item> 
-      <el-menu-item index=""> <router-link tag="a" to="/mintuiweb">手机端</router-link></el-menu-item> 
-    </el-menu>
+    <el-breadcrumb separator="/"> 
+      <el-breadcrumb-item :to="{path:'/'}"> PC端 </el-breadcrumb-item> 
+      <el-breadcrumb-item :to="{path:'/mintuiweb'}">手机MintUI</el-breadcrumb-item>
+      <el-breadcrumb-item :to="{path:'/profile'}">个人简历</el-breadcrumb-item>
+    </el-breadcrumb>
   
     <router-view></router-view>
    
@@ -11,18 +12,19 @@
 </template>
 
 <script>
-  export default {
-    name: 'app'
-  }
+export default {
+  name: "app",
+  data() {}
+};
 </script>
 
 <style>
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
-  }
+#app {
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 60px;
+}
 </style>

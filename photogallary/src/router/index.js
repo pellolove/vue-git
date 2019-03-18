@@ -4,6 +4,7 @@ import Hello from '@/components/Hello'
 import Hi from '@/components/Hi'
 import Museui from '@/components/Museui'
 import MintUIWeb from '@/components/MintUIWeb'
+import Profile from '@/components/Profile'
 Vue.use(Router)
 
 export default new Router({
@@ -26,6 +27,11 @@ export default new Router({
       path: '/MintUIWeb',
       name: 'MintUIWeb',
       component: MintUIWeb
+    },
+    {
+      path: '/Profile',
+      name: 'Profile',
+      component: Profile
     }
   ]
 })
