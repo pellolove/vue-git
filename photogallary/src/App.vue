@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <el-breadcrumb separator="/"> 
+    <el-breadcrumb separator="/" class="no-print"> 
       <el-breadcrumb-item :to="{path:'/'}"> PC端 </el-breadcrumb-item> 
       <el-breadcrumb-item :to="{path:'/mintuiweb'}">手机MintUI</el-breadcrumb-item>
       <el-breadcrumb-item :to="{path:'/profile'}">个人简历</el-breadcrumb-item>
@@ -14,7 +14,11 @@
 <script>
 export default {
   name: "app",
-  data() {}
+  data() {
+   return {
+     name:"app"
+   } 
+  }
 };
 </script>
 
@@ -23,8 +27,13 @@ export default {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+
   color: #2c3e50;
   margin-top: 60px;
+}
+@media print {
+  .no-print {
+    display: none;
+  }
 }
 </style>
